@@ -1,106 +1,195 @@
-const sidebarWidths = [74, 58, 82, 66, 71, 54];
-const articleWidths = [100, 97, 94, 98, 86];
+import Link from 'next/link';
+import Image from 'next/image';
+import { ContactBanner, Heading, Photo, TextLink } from '@/components/site';
 
 export default function Home() {
   return (
-    <main className="fixed inset-0 overflow-hidden bg-[#fbfaf8] text-zinc-900">
-      <header
-        aria-hidden="true"
-        className="grid h-[76px] grid-cols-[1fr_auto_1fr] items-center border-b border-stone-200 bg-white/95 px-6 sm:px-14"
-      >
-        <div className="flex items-center gap-3">
-          <span className="h-9 w-9 rounded-full bg-stone-100" />
-          <span className="h-3.5 w-28 rounded-full bg-stone-100" />
+    <main id="main-content">
+      <section className="hero" aria-labelledby="hero-title">
+        <Image
+          unoptimized
+          className="hero-photo"
+          src="/images/workshop.webp"
+          alt="金属加工の町工場のイメージ"
+          width={1672}
+          height={941}
+          fetchPriority="high"
+        />
+        <div className="hero-copy">
+          <p className="hero-eyebrow">UEDA SEISAKUSHO — HIGASHIOSAKA</p>
+          <h1 id="hero-title">
+            <span>ひとつの部品に、確かな技術。</span>
+            <span>
+              東大阪から支える
+              <span className="mobile-break">日本のものづくり</span>
+            </span>
+          </h1>
         </div>
-        <span className="hidden h-9 w-[min(30vw,420px)] rounded-xl bg-stone-100 sm:block" />
-        <div className="flex items-center justify-end gap-3">
-          <span className="hidden h-9 w-9 rounded-full bg-stone-100 sm:block" />
-          <span className="h-9 w-24 rounded-xl bg-stone-100" />
+        <a className="hero-scroll" href="#introduction">
+          SCROLL <span aria-hidden="true">↓</span>
+        </a>
+        <span className="hero-caption">写真は加工現場のイメージです</span>
+      </section>
+      <section id="introduction" className="intro section">
+        <div className="wrap">
+          <p>
+            株式会社
+            上田製作所は、大阪府東大阪市で機械部品・金属部品の製造と加工を行っています。ねじ切り機に使用される約70種類の部品を中心に、多種多様なものづくりに携わってきました。NC旋盤や各種工作機械を使い分け、一つひとつの形状や用途に合わせて加工。小さな部品から、機械が動く毎日を支えています。
+          </p>
         </div>
-      </header>
-
-      <div
-        aria-hidden="true"
-        className="grid h-[calc(100%-76px)] grid-cols-[180px_minmax(0,1fr)_260px] gap-10 px-6 pb-24 pt-10 opacity-55 max-lg:grid-cols-[150px_minmax(0,1fr)] max-sm:grid-cols-1 sm:px-14"
-      >
-        <aside className="hidden border-r border-stone-200 pr-7 sm:block">
-          <div className="mb-6 h-2.5 w-16 rounded-full bg-stone-200" />
-          <div className="space-y-4">
-            {sidebarWidths.map((width) => (
-              <div key={width} className="flex items-center gap-3">
-                <span className="h-4 w-4 rounded bg-stone-200" />
-                <span
-                  className="h-2.5 rounded-full bg-stone-200"
-                  style={{ width: `${width}%` }}
-                />
-              </div>
-            ))}
-          </div>
-          <div className="mb-6 mt-9 h-2.5 w-24 rounded-full bg-stone-200" />
-          <div className="space-y-4">
-            {sidebarWidths.slice(0, 3).map((width) => (
-              <span
-                key={width}
-                className="block h-2.5 rounded-full bg-stone-200"
-                style={{ width: `${width}%` }}
-              />
-            ))}
-          </div>
-        </aside>
-
-        <article className="mx-auto flex w-full max-w-3xl flex-col gap-6">
-          <div className="space-y-3">
-            <div className="h-2.5 w-28 rounded-full bg-stone-200" />
-            <div className="h-7 w-4/5 rounded-lg bg-stone-200" />
-            <div className="h-7 w-3/5 rounded-lg bg-stone-200" />
-          </div>
-          <div className="min-h-[240px] flex-1 rounded-2xl bg-stone-200" />
-          <div className="flex items-center gap-3">
-            <span className="h-9 w-9 rounded-full bg-stone-200" />
-            <span className="h-2.5 w-28 rounded-full bg-stone-200" />
-          </div>
-          <div className="space-y-2">
-            {articleWidths.map((width) => (
-              <span
-                key={width}
-                className="block h-2.5 rounded-full bg-stone-200"
-                style={{ width: `${width}%` }}
-              />
-            ))}
-          </div>
-        </article>
-
-        <aside className="space-y-5 max-lg:hidden">
-          {[0, 1].map((card) => (
-            <div
-              key={card}
-              className="space-y-4 rounded-2xl border border-stone-200 bg-white/70 p-6"
-            >
-              <span className="block h-10 w-10 rounded-full bg-stone-200" />
-              <span className="block h-3 w-3/5 rounded-full bg-stone-200" />
-              <span className="block h-2.5 w-full rounded-full bg-stone-200" />
-              <span className="block h-2.5 w-4/5 rounded-full bg-stone-200" />
-              <span className="block h-8 w-24 rounded-lg bg-stone-200" />
-            </div>
+      </section>
+      <section className="purpose wrap" aria-labelledby="purpose-title">
+        <h2 id="purpose-title">お探しの情報はこちら</h2>
+        <div className="purpose-links">
+          {[
+            [
+              '01',
+              '加工内容を知りたい',
+              '対応部品・加工内容をご紹介',
+              '/manufacturing/#processing',
+            ],
+            [
+              '02',
+              '設備・体制を見たい',
+              '工作機械とものづくりの体制',
+              '/manufacturing/#equipment',
+            ],
+            [
+              '03',
+              '加工について相談したい',
+              'ご相談・お問い合わせはこちら',
+              '/contact/',
+            ],
+          ].map(([num, title, copy, href]) => (
+            <Link href={href} key={num}>
+              <span className="eyebrow">{num}</span>
+              <strong>{title}</strong>
+              <span>{copy}</span>
+              <b aria-hidden="true">→</b>
+            </Link>
           ))}
-        </aside>
+        </div>
+      </section>
+      <section className="section service-section">
+        <div className="wrap">
+          <Heading ja="事業内容" en="SERVICE" align="center" />
+          <div className="service-grid">
+            <article className="service-card">
+              <Photo
+                src="/images/lathe.webp"
+                alt="NC旋盤による金属切削のイメージ"
+              />
+              <div className="service-body">
+                <span className="eyebrow">01</span>
+                <h3>機械部品・金属部品加工</h3>
+                <p>
+                  ねじ切り機に使われる部品を中心に、形状や用途の異なる多品種の金属部品を製造。製品に合わせて工作機械を使い分け、加工を行います。
+                </p>
+                <TextLink href="/manufacturing/">詳しく見る</TextLink>
+              </div>
+            </article>
+            <article className="service-card">
+              <Photo
+                src="/images/parts.webp"
+                alt="さまざまな形状の機械部品のイメージ"
+              />
+              <div className="service-body">
+                <span className="eyebrow">02</span>
+                <h3>多様なものづくりへの対応</h3>
+                <p>
+                  金属部品だけでなく、ゴム部品の製作にも対応。培ってきた加工技術を生かし、機械メンテナンスの分野へも事業を広げていく予定です。
+                </p>
+                <TextLink href="/manufacturing/#business">詳しく見る</TextLink>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+      <div className="wave-surface">
+        <section className="section works-section">
+          <div className="wrap">
+            <Heading ja="製造・加工品" en="WORKS" align="right" />
+            <p className="works-lead">
+              機械の動きを支える、さまざまな部品。
+              <br />
+              上田製作所が手がける代表的な製造・加工品をご紹介します。
+            </p>
+            <div className="works-grid">
+              {[
+                [
+                  'ねじ切り機関連部品',
+                  'ボディ、フロントカバー、スクロールカバーなど。レッキス工業株式会社のねじ切り機用パーツを約70種類製造しています。',
+                  'parts',
+                  '',
+                ],
+                [
+                  '機構を支える金属部品',
+                  'クランプ、締付ホイール、ボルト類、偏芯ハンドル、軸受など、形状も役割も異なる部品を加工しています。',
+                  'lathe',
+                  '',
+                ],
+                [
+                  '各種加工への対応',
+                  'ブレーキバルブ加工やスリ割り加工など。製品や加工内容に応じた設備を使用し、多様なものづくりに対応します。',
+                  'parts',
+                  'parts-close',
+                ],
+              ].map(([title, copy, img, cls]) => (
+                <article className="work-card" key={title}>
+                  <Photo
+                    src={`/images/${img}.webp`}
+                    alt={`${title}の加工イメージ`}
+                    className={cls}
+                  />
+                  <div className="work-body">
+                    <h3>{title}</h3>
+                    <p>{copy}</p>
+                    <TextLink href="/manufacturing/#processing">
+                      加工内容を見る
+                    </TextLink>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+        <section className="about-band">
+          <div className="wrap about-grid">
+            <div>
+              <p className="eyebrow">ABOUT UEDA</p>
+              <h2>
+                つくる技術を、
+                <br />
+                その先の力へ。
+              </h2>
+            </div>
+            <div className="about-story">
+              <p>
+                ものづくりのまち、東大阪で。私たちは少数精鋭の製造体制で、一つひとつの部品に向き合っています。金属加工からゴム部品の製作、そして機械メンテナンスへ。部品を「つくる」だけでなく、機械を「守る」仕事にも挑戦していきます。
+              </p>
+              <div className="company-facts">
+                <div>
+                  <span>ねじ切り機関連部品</span>
+                  <strong>
+                    約 <b>70</b> 種類
+                  </strong>
+                </div>
+                <div>
+                  <span>少数精鋭のものづくり</span>
+                  <strong>
+                    <b>3</b> 名の製造体制
+                  </strong>
+                </div>
+              </div>
+              <TextLink href="/company/#about">上田製作所について</TextLink>
+              <TextLink href="/company/#access">
+                会社概要・アクセスを見る
+              </TextLink>
+            </div>
+          </div>
+        </section>
       </div>
-
-      <output
-        aria-live="polite"
-        aria-atomic="true"
-        className="absolute left-1/2 top-[clamp(96px,13vh,122px)] w-[min(620px,calc(100%-40px))] -translate-x-1/2 rounded-[18px] border border-stone-200 bg-white/95 px-5 py-5 shadow-[0_18px_50px_rgb(24_24_27/9%)] backdrop-blur-sm"
-      >
-        <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.09em] text-stone-500">
-          Building your site
-        </p>
-        <h1 className="text-xl font-semibold tracking-tight">
-          Your site is taking shape
-        </h1>
-        <p className="mt-1 text-sm text-stone-500">
-          Your first version will appear here automatically when it’s ready.
-        </p>
-      </output>
+      <ContactBanner />
     </main>
   );
 }
