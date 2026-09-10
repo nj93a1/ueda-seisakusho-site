@@ -30,15 +30,8 @@ export function SiteHeader() {
         本文へスキップ
       </a>
       <div className="wrap header-inner">
-        <Link
-          className="brand"
-          href="/"
-          aria-label="株式会社 上田製作所 ホーム"
-        >
-          <span className="brand-ja">
-            <small>株式会社</small>上田製作所
-          </span>
-          <span className="brand-en">UEDA SEISAKUSHO</span>
+        <Link className="brand" href="/" aria-label="上田製作所 ホーム">
+          <span className="brand-name">上田製作所</span>
         </Link>
         <nav className="desktop-nav" aria-label="メインナビゲーション">
           {links.map(([href, label]) => (
@@ -62,7 +55,7 @@ export function SiteHeader() {
                 <X size={26} />
               </SheetClose>
               <SheetTitle className="mobile-title">上田製作所</SheetTitle>
-              <SheetDescription>UEDA SEISAKUSHO</SheetDescription>
+              <SheetDescription>メニュー</SheetDescription>
               <nav className="mobile-nav" aria-label="モバイルナビゲーション">
                 {links.map(([href, label], i) => (
                   <Link

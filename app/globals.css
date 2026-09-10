@@ -137,32 +137,16 @@ h3 {
   justify-content: space-between;
 }
 .brand {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
   color: var(--deep);
 }
-.brand-ja {
-  font-size: 28px;
-  letter-spacing: 0.075em;
+.brand-name {
+  font-size: 30px;
+  letter-spacing: 0.12em;
   font-weight: 800;
   white-space: nowrap;
-}
-.brand-ja small {
-  font-size: 12px;
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 26px;
-  line-height: 1.35;
-  margin-right: 8px;
-  white-space: normal;
-}
-.brand-en {
-  font:
-    700 10px/1.4 Arial,
-    sans-serif;
-  letter-spacing: 0.29em;
-  margin: 6px 0 0 35px;
 }
 .desktop-nav {
   display: flex;
@@ -1183,8 +1167,8 @@ h3 {
   .desktop-nav {
     gap: 20px;
   }
-  .brand-ja {
-    font-size: 24px;
+  .brand-name {
+    font-size: 26px;
   }
   .service-grid {
     padding-inline: 20px;
@@ -1227,11 +1211,9 @@ h3 {
   .mobile-trigger {
     display: block;
   }
-  .brand-ja {
+  .brand-name {
     font-size: 24px;
-  }
-  .brand-en {
-    font-size: 9px;
+    letter-spacing: 0.09em;
   }
   .hero {
     height: 86svh;
