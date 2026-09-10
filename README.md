@@ -37,3 +37,9 @@ npm run dev
 画像はAI生成の加工イメージです。詳細は [`docs/design-notes.md`](docs/design-notes.md) を参照してください。
 公開前に実写素材、正式ロゴ、創業年、プライバシーポリシーの運用内容をご確認ください。
 制作確認用のため、検索エンジンのインデックスは無効にしています。
+
+## プレビュー
+
+GitHub Pages: https://nj93a1.github.io/ueda-seisakusho-site/
+
+`main` ブランチへのpushでGitHub Actionsが静的サイトをビルドし、Pagesへ公開します。

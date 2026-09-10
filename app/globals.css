@@ -193,21 +193,31 @@ h3 {
   height: 44px;
   display: grid;
   place-items: center;
+  cursor: pointer;
+  list-style: none;
+}
+.menu-trigger::-webkit-details-marker {
+  display: none;
 }
 .mobile-sheet {
-  padding: 64px 25px 30px !important;
-  width: min(88vw, 390px) !important;
+  position: fixed;
+  top: 72px;
+  right: 12px;
+  width: min(88vw, 390px);
+  padding: 30px 25px;
+  background: #fff;
+  border: 1px solid var(--line);
+  box-shadow: 0 18px 50px rgb(8 45 58 / 18%);
 }
 .mobile-title {
-  font-size: 24px !important;
-  font-weight: 700 !important;
-  color: var(--deep) !important;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--deep);
 }
-.menu-close {
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  padding: 8px;
+.mobile-description {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
 }
 .mobile-nav {
   margin-top: 24px;
@@ -228,9 +238,10 @@ h3 {
   margin-left: auto;
 }
 .mobile-phone {
+  display: block;
   font: 700 26px Arial;
   color: var(--deep);
-  margin-top: auto;
+  margin-top: 28px;
 }
 .hero {
   height: 920px;
@@ -632,9 +643,7 @@ h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(115deg, #163743ae, #1c304dd9 58%, #343058bf),
-    url('/images/workshop.webp') center/cover;
+  background: linear-gradient(115deg, #163743, #1c304d 58%, #343058);
   z-index: -1;
 }
 .contact-banner h2 {
